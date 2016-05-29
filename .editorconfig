@@ -1,0 +1,9 @@
+root = true
+
+[{*.py,*.py3}]
+end_of_line = lf|crlf|cr
+indent_style = space|tab
+charset = utf-8|latin1|utf-16be|utf-16le
+trim_trailing_whitespace = true|false
+insert_final_newline = true|false
+indent_size = 4
