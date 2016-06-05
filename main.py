@@ -1,9 +1,16 @@
-from peoc import OCFRActive
+from parsers.OrangeCountyFireRescue import OCFRActive
+from parsers.OrlandoFireDepartment import OFDActive
+from datetime import datetime
+import time
 
-test = OCFRActive()
+ocfr = OCFRActive()
+ofd = OFDActive()
 
-data = test.parse()
+while True:
+    print("Parsing %s" % datetime.now())
+    ocfr_data = ocfr.parse()
+    ocfr.put(ocfr_data)
 
-# print(data)
-
-print(test.put(data))
+    ofd_data = ofd.parse()
+    ofd.put(ofd_data)
+    time.sleep(60)
